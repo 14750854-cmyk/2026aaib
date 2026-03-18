@@ -1,1 +1,239 @@
 
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "aX310FlEDtJl"
+      },
+      "outputs": [],
+      "source": [
+        "// week04-1 好玩的程式設計 很多for\n",
+        "// File-Preference 改字型大小\n",
+        "size(600, 400);\n",
+        "\n",
+        "for (int y = 0; y < 400; y += 50) {\n",
+        "    for (int x = 0; x < 600; x += 50) {\n",
+        "        rect(x, y, 50, 50);\n",
+        "    }\n",
+        "}\n",
+        "\n",
+        "for (int x = 0; x < 600; x += 50) {\n",
+        "    rect(x, 0, 50, 50);\n",
+        "}\n",
+        "\n",
+        "for (int x = 0; x < 600; x += 50) {\n",
+        "    rect(x, 50, 50, 50);\n",
+        "}\n",
+        "\n",
+        "// for (int x = 0; x < 600; x += 50) {\n",
+        "//     rect(x, 100, 50, 50);\n",
+        "// }"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "// week04-2 好玩的程式設計 for for 迴圈 + if 判斷\n",
+        "// Ctrl-N 開新的程式視窗\n",
+        "\n",
+        "void setup() {\n",
+        "  size(600, 400); // 視窗大小\n",
+        "}\n",
+        "\n",
+        "void draw() {\n",
+        "  for (int y = 0; y < 400; y += 50) {\n",
+        "    for (int x = 0; x < 600; x += 50) {\n",
+        "      if (x < mouseX && mouseX < x + 50)\n",
+        "        fill(#74FFE4);\n",
+        "      else if (y < mouseY && mouseY < y + 50)\n",
+        "        fill(#74FFE4);\n",
+        "      else\n",
+        "        fill(#FFFFF2); // 自己在 Tool-色彩選擇器找色彩\n",
+        "       rect(x, y, 50, 50);\n",
+        "    }\n",
+        "  }\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "Z--PiZ9FD0ob"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "// week04-3a.cpp SOTTI07_Base_001\n",
+        "#include <stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    int d50 = N / 50;\n",
+        "    int d10 = (N%50) /10;\n",
+        "    int d5 = (N%10) /5;\n",
+        "    int d1 = (N%5);\n",
+        "\n",
+        "    printf(\"%d=50*%d+10*%d+5*%d+1*%d\",N,d50,d10,d5,d1);\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "qdgc79v1D3a8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#include <stdio.h>\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    int d50 = N / 50;\n",
+        "    int d5 = (N % 50) / 5;\n",
+        "    int d1 = (N % 5);\n",
+        "    printf(\"%d=50*%d+5*%d+1*%d\\n\", N, d50, d5, d1);\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "cXEGhsLsD6Mb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "//week04-4a.cpp SOIT106_BASE_004\n",
+        "#include <stdio.h>\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    int ans = 0;\n",
+        "    if (N <= 2000) ans = 100;\n",
+        "    else {\n",
+        "        ans = 100 + (N-2000)/500 * 5;\n",
+        "        if (N%500>0) ans += 5;\n",
+        "    }\n",
+        "    printf(\"%d\\n\", ans);\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "CTVW_lK4D-K7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#include <stdio.h>\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "\n",
+        "    scanf(\"%d\", &N);0\n",
+        "    int ans = 100;\n",
+        "    if (N > 1500) {\n",
+        "        ans += (N - 1500) / 250 * 5;\n",
+        "        if (N % 250 > 0) ans += 5;\n",
+        "    }\n",
+        "    printf(\"%d\", ans);\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "83s9UAotEAaL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#include <stdio.h>\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    if (N >= 90) printf(\"A\\n\");\n",
+        "    else if (N >= 80) printf(\"B\\n\");\n",
+        "    else if (N >= 60) printf(\"C\\n\");\n",
+        "    else printf(\"F\\n\");\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "sKL-_8oDEDRz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#include <stdio.h>\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    if (N >= 90) printf(\"A\");\n",
+        "    else if (N >= 80) printf(\"B\");\n",
+        "    else if (N >= 70) printf(\"C\");\n",
+        "    else if (N >= 60) printf(\"D\");\n",
+        "    else printf(\"F\");\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "5TPlbAmKEFRL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "//week04-6.cpp SOIT106_BASE\n",
+        "#include <stdio.h>\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int N;\n",
+        "    scanf(\"%d\", &N);\n",
+        "    int ans = 0, now;\n",
+        "    for (int i = 0; i < N; i++) {\n",
+        "        scanf(\"%d\", &now);\n",
+        "        ans += now;\n",
+        "    }\n",
+        "    printf(\"%d\\n\", ans);\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "hFvKsJNmEG1T"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
